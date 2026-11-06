@@ -29,3 +29,10 @@ __pycache__
 *.njsproj
 *.sln
 *.sw?
+
+# Binarios portables y compilados pesados de la app
+dist-portable/
+*.zip
+*.pyd
+*.dll
+src-tauri/target/
