@@ -1,0 +1,33 @@
+{
+  "name": "gestoria",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "backend": "python-backend\\venv\\Scripts\\python.exe python-backend\\backend_server.py",
+    "backend:force": "python-backend\\venv\\Scripts\\python.exe python-backend\\build_sidecar.py --force",
+    "build:backend": "python python-backend/build_sidecar.py",
+    "build:app": "tauri build",
+    "build:all": "npm run build:backend && tauri build",
+    "portable": "powershell -ExecutionPolicy Bypass -File scripts/empaquetar-portable.ps1"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-dialog": "^2.8.0",
+    "@tauri-apps/plugin-fs": "^2.6.0",
+    "@tauri-apps/plugin-opener": "^2",
+    "@tauri-apps/plugin-shell": "^2.4.0",
+    "pdfjs-dist": "^3.11.174",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.16"
+  }
+}

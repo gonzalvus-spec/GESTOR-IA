@@ -1,0 +1,157 @@
+/* ============================================================
+   SELECTOR DE CÁMARA
+   ============================================================ */
+.selector-camara {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.selector-camara-etiqueta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+
+.selector-camara-fila {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+/* ---------- Desplegable ---------- */
+.select-envoltorio {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: block;
+}
+
+.select-envoltorio select {
+  width: 100%;
+  height: 34px;
+  padding: 0 30px 0 11px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--text-0);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.select-envoltorio select:hover:not(:disabled) {
+  background: var(--bg-3);
+  border-color: var(--border-strong);
+}
+
+.select-envoltorio select:focus-visible {
+  border-color: var(--accent);
+  box-shadow: var(--ring);
+}
+
+.select-envoltorio select:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.select-envoltorio option {
+  background: var(--bg-2);
+  color: var(--text-0);
+}
+
+.select-flecha {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--text-2);
+  pointer-events: none;
+}
+
+/* ---------- Avisos ---------- */
+.selector-camara-aviso {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--text-2);
+}
+
+.selector-camara-aviso.pendiente {
+  color: var(--warning);
+}
+
+.selector-camara-aviso.error {
+  color: var(--danger);
+}
+
+.selector-camara-aviso svg {
+  flex-shrink: 0;
+}
+
+/* ---------- Variante compacta (cabeceras) ---------- */
+.selector-camara--compacto {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+  flex: 0 1 auto;
+  width: 250px;
+  max-width: 100%;
+  min-width: 150px;
+  padding: 6px 7px 6px 11px;
+  background: rgba(21, 28, 37, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.selector-camara--compacto .selector-camara-etiqueta {
+  flex-shrink: 0;
+}
+
+.selector-camara--compacto .selector-camara-fila {
+  flex: 1;
+}
+
+.selector-camara--compacto .select-envoltorio select {
+  height: 28px;
+  border-color: transparent;
+  background: transparent;
+  padding-left: 2px;
+}
+
+.selector-camara--compacto .select-envoltorio select:hover:not(:disabled) {
+  background: transparent;
+  border-color: transparent;
+}
+
+.selector-camara--compacto .selector-camara-aviso {
+  flex-basis: 100%;
+  padding-left: 2px;
+}
+
+/* ---------- Animación del botón actualizar ---------- */
+.girando {
+  animation: girar 0.9s linear infinite;
+}
+
+@keyframes girar {
+  to {
+    transform: rotate(360deg);
+  }
+}

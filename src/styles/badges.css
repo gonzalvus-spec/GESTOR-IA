@@ -1,0 +1,149 @@
+/* ============================================================
+   BADGES DE ESTADO
+   ============================================================ */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--text-1);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status-badge .dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--text-2);
+}
+
+.status-badge.online {
+  border-color: rgba(47, 191, 113, 0.32);
+  background: var(--success-soft);
+  color: #8fe3b6;
+}
+
+.status-badge.online .dot {
+  background: var(--success);
+  box-shadow: 0 0 8px rgba(47, 191, 113, 0.7);
+}
+
+.status-badge.offline {
+  border-color: rgba(255, 93, 93, 0.32);
+  color: #ffa3a3;
+}
+
+.status-badge.offline .dot {
+  background: var(--danger);
+}
+
+.status-badge.pendiente {
+  border-color: rgba(242, 181, 68, 0.32);
+  background: var(--warning-soft);
+  color: #f6cd7c;
+}
+
+.status-badge.pendiente .dot {
+  background: var(--warning);
+  animation: pulso 1.4s ease-in-out infinite;
+}
+
+.status-badge.error {
+  border-color: rgba(255, 93, 93, 0.42);
+  background: var(--danger-soft);
+  color: #ffa3a3;
+}
+
+.status-badge.error .dot {
+  background: var(--danger);
+  box-shadow: 0 0 8px rgba(255, 93, 93, 0.6);
+}
+
+.status-badge.zoom-on {
+  border-color: rgba(242, 181, 68, 0.4);
+  background: var(--warning-soft);
+  color: #f6cd7c;
+}
+
+.status-badge.zoom-on .dot {
+  background: var(--warning);
+  box-shadow: 0 0 8px rgba(242, 181, 68, 0.7);
+}
+
+.status-badge.zoom-off .dot {
+  background: var(--text-2);
+}
+
+.status-badge.lock-on {
+  border-color: rgba(255, 93, 93, 0.45);
+  background: var(--danger-soft);
+  color: #ffa3a3;
+  font-weight: 700;
+}
+
+.status-badge.lock-on .dot {
+  background: var(--danger);
+  box-shadow: 0 0 8px rgba(255, 93, 93, 0.7);
+}
+
+.status-badge.lock-off {
+  border-color: rgba(47, 191, 113, 0.32);
+}
+
+.status-badge.lock-off .dot {
+  background: var(--success);
+  box-shadow: 0 0 6px rgba(47, 191, 113, 0.6);
+}
+
+/* ============================================================
+   INDICADOR DEL MOTOR DE IA
+   ============================================================ */
+.estado-motor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.estado-motor-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* En la pantalla inicial el indicador va centrado y separado. */
+.pantalla-inicio .estado-motor {
+  justify-content: center;
+  margin-top: 4px;
+}
+
+/* ============================================================
+   BOTÓN REINTENTAR (compatibilidad)
+   ============================================================ */
+.btn-reintentar {
+  padding: 7px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-0);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.btn-reintentar:hover {
+  background: var(--bg-3);
+  border-color: var(--accent);
+}
+
+.btn-reintentar.secundario {
+  background: transparent;
+  color: var(--text-2);
+}
